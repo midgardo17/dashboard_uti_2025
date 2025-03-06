@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicadores UTI 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            background-color: white;
+            border-top: 2px solid blue;
+            padding: 10px;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .logo img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        header h2 {
+            font-size: 18px;
+            color: red;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .table-section h3 {
+            font-size: 20px;
+            color: blue;
+            background-color: lightblue;
+            padding: 5px;
+            text-align: center;
+        }
+
+        #filter {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid lightgray;
+            padding: 8px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: lightgray;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .meta-alcancada {
+            background-color: lightgreen;
+        }
+
+        .meta-nao-alcancada {
+            background-color: lightcoral;
+        }
+
+        .editable {
+            background-color: #e6f7ff;
+            cursor: pointer;
+        }
+
+        .descriptions-section h3 {
+            font-size: 20px;
+            color: blue;
+            background-color: lightblue;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .descriptions-section div {
+            margin-bottom: 20px;
+        }
+
+        .descriptions-section h4 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: red;
+        }
+
+        .descriptions-section p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: lightgray;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: black;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 12px;
+            }
+            header h1 {
+                font-size: 18px;
+            }
+            header h2 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Céu de Brasília">
+            <span>Céu de Brasília</span>
+        </div>
+        <h1>INDICADORES UNIDADE DE TERAPIA INTENSIVA</h1>
+        <h2>2025</h2>
+    </header>
+    <main>
+        <section class="table-section">
+            <h3>Indicadores Mensais</h3>
+            <input type="text" id="filter" placeholder="Filtrar por indicador">
+            <table id="indicadores-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Meta</th>
+                        <th>Jan</th>
+                        <th>Fev</th>
+                        <th>Mar</th>
+                        <th>Abr</th>
+                        <th>Mai</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Ago</th>
+                        <th>Set</th>
+                        <th>Out</th>
+                        <th>Nov</th>
+                        <th>Dez</th>
+                        <th>2024</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section class="descriptions-section">
+            <h3>Indicadores</h3>
+            <div>
+                <h4>Mortalidade ajustada</h4>
+                <p>Taxa de mortalidade ajustada para pacientes da UTI, calculada com base em escores de gravidade. Em janeiro, a taxa foi de 2.0%, acima da meta de ≤1%, indicando a necessidade de investigação das causas de mortalidade acima do esperado.</p>
+            </div>
+            <div>
+                <h4>Necessidade de entubagem</h4>
+                <p>Percentual de pacientes que necessitaram de entubação na UTI. Em janeiro e fevereiro, a taxa foi de 7.0%, acima da meta de ≤6%, sugerindo uma maior necessidade de ventilação mecânica, possivelmente devido a casos mais graves ou atrasos na intervenção precoce.</p>
+            </div>
+            <div>
+                <h4>Horas de entubagem (HAS)</h4>
+                <p>Média de horas de entubação por paciente. Não foram fornecidos dados para este indicador em janeiro ou fevereiro.</p>
+            </div>
+            <div>
+                <h4>Taxa de mortalidade</h4>
+                <p>Taxa geral de mortalidade na UTI. Em janeiro, a taxa foi de 21%, acima da meta de ≤15%. Em fevereiro, melhorou para 14%, atingindo a meta. A melhora pode ser devido a um melhor manejo de pacientes críticos ou menos casos graves.</p>
+            </div>
+            <div>
+                <h4>Taxa de RAS</h4>
+                <p>Taxa de um evento adverso específico (provavelmente relacionado a questões respiratórias). Em janeiro, a taxa foi de 17%, acima da meta de ≤12%. Em fevereiro, caiu para 10%, atingindo a meta, sugerindo que intervenções eficazes foram implementadas.</p>
+            </div>
+            <div>
+                <h4>Densidade de Incidência de Pneumonia Associada à Ventilação Mecânica (PAV)</h4>
+                <p>Incidência de PAV por 1.000 dias de ventilação. Em janeiro, a taxa foi de 11, acima da meta de ≤10. Em fevereiro, caiu para 10, atingindo a meta. Ações incluíram maior adesão aos protocolos de prevenção de PAV.</p>
+            </div>
+            <div>
+                <h4>Taxa de mortalidade (DM)</h4>
+                <p>Taxa de mortalidade para um subconjunto específico de pacientes (possivelmente relacionado a uma condição específica). Em janeiro, a taxa foi de 33%, abaixo da meta de ≤41%, o que é positivo. Não há dados para fevereiro.</p>
+            </div>
+            <div>
+                <h4>Densidade de Incidência de Infecção Associada ao Cateter Venoso Central (CVC)</h4>
+                <p>Incidência de infecção associada ao cateter por 1.000 dias de cateter. Em janeiro, a taxa foi de 14, significativamente acima da meta de ≤4, indicando necessidade de melhorias nos protocolos de cuidado com cateteres. Não há dados para fevereiro.</p>
+            </div>
+            <div>
+                <h4>Taxa de utilização de cateter venoso</h4>
+                <p>Percentual de pacientes na UTI com cateter venoso central. Em janeiro, a taxa foi de 57%, acima da meta de ≤55%, sugerindo um possível uso excessivo de cateteres. Não há dados para fevereiro.</p>
+            </div>
+            <div>
+                <h4>Taxa de absenteísmo</h4>
+                <p>Percentual de absenteísmo da equipe. Não foram fornecidos dados para este indicador em janeiro ou fevereiro.</p>
+            </div>
+            <div>
+                <h4>Turnover</h4>
+                <p>Taxa de rotatividade de pessoal. Não foram fornecidos dados para este indicador em janeiro ou fevereiro.</p>
+            </div>
+            <div>
+                <h4>Elegibilidade de Protocolo de Prevenção de PAV</h4>
+                <p>Percentual de pacientes elegíveis para o protocolo de prevenção de PAV. Em janeiro, a taxa foi de 75%, abaixo da meta de ≥90%, indicando a necessidade de melhor identificação e inclusão de pacientes elegíveis.</p>
+            </div>
+            <div>
+                <h4>Elegibilidade de Protocolo de Prevenção de ICS por CVC</h4>
+                <p>Percentual de pacientes elegíveis para o protocolo de prevenção de infecção associada ao cateter. Não foram fornecidos dados para este indicador em janeiro ou fevereiro.</p>
+            </div>
+            <div>
+                <h4>Média de Permanência</h4>
+                <p>Média de dias de permanência dos pacientes na UTI. Em janeiro, a média foi de 8 dias, e em fevereiro, 10 dias, ambos atendendo à meta de ≤10, indicando uma rotatividade eficiente de pacientes.</p>
+            </div>
+            <div>
+                <h4>Taxa de Ocupação UTI</h4>
+                <p>Percentual de leitos ocupados na UTI. Em janeiro, a taxa foi de 90%, acima da meta de ≥75%, indicando alta demanda por leitos na UTI. Não há dados para fevereiro.</p>
+            </div>
+            <div>
+                <h4>Taxa de Readmissão em até 48 h</h4>
+                <p>Percentual de pacientes readmitidos na UTI dentro de 48 horas após a alta. Em janeiro, a taxa foi de 0%, atendendo à meta de 0%, sugerindo um planejamento de alta eficaz.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Última atualização: [Data]</p>
+    </footer>
+
+    <script>
+        // Dados em formato JSON
+        const data = {
+            "Mortalidade ajustada": { "Meta": "≤1", "Jan": "2.0%", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Necessidade de entubagem": { "Meta": "≤6%", "Jan": "7.0%", "Fev": "7.0%", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Horas de entubagem (HAS)": { "Meta": "NA", "Jan": "", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Taxa de mortalidade": { "Meta": "≤15%", "Jan": "21%", "Fev": "14%", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Taxa de RAS": { "Meta": "≤12%", "Jan": "17%", "Fev": "10%", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Densidade de Incidência de Pneumonia Associada à Ventilação Mecânica (PAV)": { "Meta": "≤10", "Jan": "11", "Fev": "10", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Taxa de mortalidade (DM)": { "Meta": "≤41", "Jan": "33%", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Densidade de Incidência de Infecção Associada ao Cateter Venoso Central (CVC)": { "Meta": "≤4", "Jan": "14", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Taxa de utilização de cateter venoso": { "Meta": "≤55%", "Jan": "57%", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Taxa de absenteísmo": { "Meta": "≤4%", "Jan": "", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Turnover": { "Meta": "≤12%", "Jan": "", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Elegibilidade de Protocolo de Prevenção de PAV": { "Meta": "≥90%", "Jan": "75%", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Elegibilidade de Protocolo de Prevenção de ICS por CVC": { "Meta": "≥90%", "Jan": "", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Média de Permanência": { "Meta": "≤10", "Jan": "8", "Fev": "10", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Taxa de Ocupação UTI": { "Meta": "≥75%", "Jan": "90%", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" },
+            "Taxa de Readmissão em até 48 h": { "Meta": "0%", "Jan": "0%", "Fev": "", "Mar": "", "Abr": "", "Mai": "", "Jun": "", "Jul": "", "Ago": "", "Set": "", "Out": "", "Nov": "", "Dez": "", "2024": "" }
+        };
+
+        // Geração dinâmica da tabela
+        const tbody = document.querySelector('#indicadores-table tbody');
+        for (const indicador in data) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${indicador}</td>
+                <td>${data[indicador]['Meta']}</td>
+                ${['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez', '2024'].map(month => {
+                    const value = data[indicador][month];
+                    const meta = data[indicador]['Meta'];
+                    let className = 'editable';
+                    if (value && meta) {
+                        const isPercentage = meta.includes('%');
+                        const metaValue = parseFloat(meta.replace('≤', '').replace('≥', '').replace('%', ''));
+                        const actualValue = parseFloat(value.replace('%', ''));
+                        if (isPercentage) {
+                            if (meta.includes('≤') && actualValue <= metaValue) {
+                                className += ' meta-alcancada';
+                            } else if (meta.includes('≥') && actualValue >= metaValue) {
+                                className += ' meta-alcancada';
+                            } else {
+                                className += ' meta-nao-alcancada';
+                            }
+                        } else {
+                            if (meta.includes('≤') && actualValue <= metaValue) {
+                                className += ' meta-alcancada';
+                            } else if (meta.includes('≥') && actualValue >= metaValue) {
+                                className += ' meta-alcancada';
+                            } else {
+                                className += ' meta-nao-alcancada';
+                            }
+                        }
+                    }
+                    return `<td class="${className}" contenteditable="true" onblur="updateData('${indicador}', '${month}', this.innerText)">${value}</td>`;
+                }).join('')}
+            `;
+            tbody.appendChild(row);
+        }
+
+        // Função para atualizar os dados
+        function updateData(indicador, field, value) {
+            data[indicador][field] = value;
+            localStorage.setItem('indicadoresData', JSON.stringify(data));
+            // Atualizar a coloração após edição
+            const rows = document.querySelectorAll('#indicadores-table tbody tr');
+            rows.forEach(row => {
+                const ind = row.querySelector('td:first-child').innerText;
+                if (ind === indicador) {
+                    const cells = row.querySelectorAll('td');
+                    cells.forEach((cell, index) => {
+                        if (index > 1) { // Ignorar "Indicador" e "Meta"
+                            const month = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez', '2024'][index - 2];
+                            const value = data[ind][month];
+                            const meta = data[ind]['Meta'];
+                            let className = 'editable';
+                            if (value && meta) {
+                                const isPercentage = meta.includes('%');
+                                const metaValue = parseFloat(meta.replace('≤', '').replace('≥', '').replace('%', ''));
+                                const actualValue = parseFloat(value.replace('%', ''));
+                                if (isPercentage) {
+                                    if (meta.includes('≤') && actualValue <= metaValue) {
+                                        className += ' meta-alcancada';
+                                    } else if (meta.includes('≥') && actualValue >= metaValue) {
+                                        className += ' meta-alcancada';
+                                    } else {
+                                        className += ' meta-nao-alcancada';
+                                    }
+                                } else {
+                                    if (meta.includes('≤') && actualValue <= metaValue) {
+                                        className += ' meta-alcancada';
+                                    } else if (meta.includes('≥') && actualValue >= metaValue) {
+                                        className += ' meta-alcancada';
+                                    } else {
+                                        className += ' meta-nao-alcancada';
+                                    }
+                                }
+                            }
+                            cell.className = className;
+                        }
+                    });
+                }
+            });
+        }
+
+        // Função de filtro
+        document.getElementById('filter').addEventListener('keyup', function() {
+            const filterValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#indicadores-table tbody tr');
+            rows.forEach(row => {
+                const indicador = row.querySelector('td:first-child').innerText.toLowerCase();
+                row.style.display = indicador.includes(filterValue) ? '' : 'none';
+            });
+        });
+
+        // Tooltips
+        document.querySelectorAll('.table-section td').forEach(td => {
+            td.addEventListener('mouseover', function(event) {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.innerText = `Indicador: ${td.parentElement.querySelector('td:first-child').innerText}`;
+                document.body.appendChild(tooltip);
+                tooltip.style.left = `${event.pageX + 10}px`;
+                tooltip.style.top = `${event.pageY + 10}px`;
+            });
+            td.addEventListener('mouseout', function() {
+                document.querySelector('.tooltip')?.remove();
+            });
+        });
+
+        // Carregar dados salvos do localStorage
+        const savedData = localStorage.getItem('indicadoresData');
+        if (savedData) {
+            Object.assign(data, JSON.parse(savedData));
+            // Re-renderizar a tabela com os dados salvos
+            tbody.innerHTML = '';
+            for (const indicador in data) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${indicador}</td>
+                    <td>${data[indicador]['Meta']}</td>
+                    ${['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez', '2024'].map(month => {
+                        const value = data[indicador][month];
+                        const meta = data[indicador]['Meta'];
+                        let className = 'editable';
+                        if (value && meta) {
+                            const isPercentage = meta.includes('%');
+                            const metaValue = parseFloat(meta.replace('≤', '').replace('≥', '').replace('%', ''));
+                            const actualValue = parseFloat(value.replace('%', ''));
+                            if (isPercentage) {
+                                if (meta.includes('≤') && actualValue <= metaValue) {
+                                    className += ' meta-alcancada';
+                                } else if (meta.includes('≥') && actualValue >= metaValue) {
+                                    className += ' meta-alcancada';
+                                } else {
+                                    className += ' meta-nao-alcancada';
+                                }
+                            } else {
+                                if (meta.includes('≤') && actualValue <= metaValue) {
+                                    className += ' meta-alcancada';
+                                } else if (meta.includes('≥') && actualValue >= metaValue) {
+                                    className += ' meta-alcancada';
+                                } else {
+                                    className += ' meta-nao-alcancada';
+                                }
+                            }
+                        }
+                        return `<td class="${className}" contenteditable="true" onblur="updateData('${indicador}', '${month}', this.innerText)">${value}</td>`;
+                    }).join('')}
+                `;
+                tbody.appendChild(row);
+            }
+        }
+    </script>
+</body>
+</html>
