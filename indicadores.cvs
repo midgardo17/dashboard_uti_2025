@@ -1,0 +1,18 @@
+Indicador,Meta,Jan,Fev,Mar,Abr,Mai,Jun,Jul,Ago,Set,Out,Nov,Dez,2024
+Mortalidade ajustada,0%,-1%,0.01%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Necessidade de cuidados de enfermagem (NAS),80%,70%,75%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taxa de mortalidade,15%,21%,14%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taxa de RAS,10%,12%,17%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Densidade de Incidência de Pneumonia Associada à Ventilação Mecânica (PAV),5%,10%,8%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taxa de utilização de Ventilação Mecânica (VM),30%,41%,33%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Presença de Cateter Venoso Central (CVC),10%,14%,12%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taxa de infecção de cateter venoso,5%,5.95%,5.7%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Presença de Sonda Nasogástrica (SNG),5%,6%,5%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taxa de cateter vesical de demora (CVD),5%,5.05%,5.7%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taxa de absenteísmo,2%,2.4%,2.5%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Turnover,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adesão ao Protocolo de Prevenção de PAV,95%,90%,75%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Adesão ao Protocolo de Prevenção de Úlceras por Pressão (UPP),95%,90%,75%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Média de Permanência,7 dias,8 dias,10 dias,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taxa de Desocupação de UTI,5%,5%,6%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Taxa de Readmissão em até 48h,0%,0%,1%,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
